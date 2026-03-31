@@ -1,0 +1,42 @@
+Express=1.used for backend.
+        2.Express is a minimal and flexible web application framework for node js that simplifies development of web server and apis.
+It provides features such as :
+1.Routing
+2.Middleware support
+3.Request and Response handling
+4.Template Rendering
+5.Rest api creation
+
+Steps for express project creation.
+On New Terminal => cmd line
+0 : have a node.js in laptop 
+1 : npm init
+2 : npm install express
+    It creates node_module and Package.json and Packagelog.json
+3 : index.js(entry file) file in express folder.
+
+Activities :
+1. diff - Package.json and Packagelog.json.
+2. diff - Dependencies and dev Dependencies.
+
+IMP 
+we can not write port number as it is at the industry level
+we make .env file and set port number there
+
+# Routing : 
+Routing refers to determining how application respond to a client
+request for specific url and http method.
+
+component of routing :
+1.url path
+2.http methods
+3.handler function
+Create 3/4 routes
+
+
+Middleware in Express JS :
+Middleware is a function that execute during request before sending the final response.
+They have access through :
+1.Request
+2.Response
+3.Next

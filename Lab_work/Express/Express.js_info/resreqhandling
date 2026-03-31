@@ -1,0 +1,55 @@
+// Handling Request and Response
+// express application handles http request and response
+// Request : The req object containing information about the client request.
+// Ex : URL, headers, query parameters, request body.
+
+application.get('/',(req, res)=>{
+    console.log(req.query.name);
+})
+
+// Detailed study about query parameter
+//with 3,4 real world examples
+// Where used in industry level
+
+ 
+/*
+1.Detailed study about query parameter.
+Query parametersare key-value pairs added to a URL after `?` to send extra data to the server.
+ Example:
+http://localhost:3000/search?name=sakshi&age=21
+In this example, `name` and `age` are query parameters with values `sakshi` and `21` respectively.
+In Express.js, you can access these parameters using `req.query` object.
+For the above URL, you can access them as:
+app.get('/search', (req, res) => {
+    const name = req.query.name;
+    const age = req.query.age;
+    res.send(`Name: ${name}, Age: ${age}`);
+});
+
+2.Real-World Examples.
+- Search Feature:
+      /search?product=shoes
+Used in e-commerce sites to search items.
+
+ -Pagination:
+     /users?page=2&limit=10
+Used to load data page by page (Instagram, websites).
+
+- Filtering:
+      /products?category=clothes&price=1000
+Used to filter products based on category, price, etc.
+
+- Authentication / Tokens
+      /verify?token=abc123
+Used in email verification or password reset links.
+
+Key Point:
+Query parameters are used to send optional data to the server in URL format for dynamic operations like search, filter, and pagination.
+
+// Where used in industry level:
+Query parameters are widely used in industry-level applications for various purposes:
+1. E-commerce Platforms: For searching products, filtering by category, price, etc.
+2. Social Media: For fetching user posts, filtering content, etc.
+3. REST APIs: For sorting, filtering, and pagination of data.
+4. Dashboards: For dynamic data visualization based on user input.
+5. Authentication: For email verification and password reset links.

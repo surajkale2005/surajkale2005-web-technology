@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>War Relief Donation Tracker (INR)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Donate for War Victims</h1>
+    <p>Goal: ₹40,00,000</p>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+    <p id="totalDisplay">Total Donated: ₹0</p>
+
+    <input type="text" id="donorName" placeholder="Your Name">
+    <input type="number" id="donationAmount" placeholder="Enter amount ₹">
+
+    <button id="donateBtn">Donate</button>
+    <button id="resetBtn">Reset</button>
+
+    <ul id="donationList"></ul>
+</div>
+
+<!-- 🧾 Receipt Modal -->
+<div id="receiptModal" class="modal">
+    <div class="modal-content">
+        <h2>🧾 Donation Receipt</h2>
+        <p id="receiptText"></p>
+        <button onclick="closeReceipt()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

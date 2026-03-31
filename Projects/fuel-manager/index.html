@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Fuel Manager Pro | Bike Fuel Tracker + Smart Pump Request</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⛽ Fuel Manager • Bike Tracker</h1>
+        
+    </div>
+
+    <!-- STATS DASHBOARD (dynamic) -->
+    <div class="dashboard" id="dashboardStats">
+        <!-- dynamically filled by js -->
+    </div>
+
+    <!-- FORMS : ADD FUEL / ADD TRAVEL / AVERAGE CONTROL -->
+    <div class="forms-grid">
+        <div class="form-panel">
+            <h2>⛽ Add Fuel (Fill Tank)</h2>
+            <select id="fuelTypeFill">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+            <input type="number" id="fillLiters" placeholder="Liters to add" step="0.1" min="0.1">
+            <button id="addFuelBtn">➕ Add Fuel</button>
+        </div>
+
+        <div class="form-panel">
+            <h2>🏍️ Add Travel Log</h2>
+            <select id="travelFuelType">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+            <input type="number" id="distanceKm" placeholder="Distance traveled (km)" step="0.1">
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="customAvg" placeholder="Avg (km/l) optional" step="0.1" style="width: 60%;">
+                <span style="font-size: 0.8rem; align-self: center;">uses preset avg</span>
+            </div>
+            <button id="addTravelBtn">📆 Record Trip</button>
+        </div>
+
+        <div class="form-panel request-area" id="requestPanel">
+            <h2>🛢️ Nearest Pump Request</h2>
+            <p style="font-size: 0.85rem;">⚠️ <strong>Low fuel alert</strong> (≤2 liters) → request refill</p>
+            <select id="requestFuelType">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+            <input type="number" id="requestLiters" placeholder="Request amount (liters)" step="0.5">
+            <button id="sendRequestBtn">📡 Send Request to Nearest Pump</button>
+            <div id="requestStatus" class="status">✨ Ready to request</div>
+            <div id="confirmReceiptArea" style="display: none; margin-top: 0.8rem;">
+                <button id="confirmReceiptBtn" style="background: #27ae60;">✅ Confirm Receipt</button>
+                <button id="cancelReceiptBtn" style="background: #e67e22;">❌ Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGS TABLE (Transactions) -->
+    <div class="log-table">
+        <h2>📋 Fuel & Trip History </h2>
+        <table id="logTable">
+            <thead>
+                <tr><th>ID</th><th>Type</th><th>Fuel</th><th>Details</th><th>Δ Liters</th><th>Date</th> </>
+            </thead>
+            <tbody id="logTableBody">
+                <tr><td colspan="6">Loading logs...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        🧠 Demonstrates: var/let/const, scope, data types, stack/heap, typeof, conversion, comparisons, strings, math, date, arrays (map/filter/reduce), objects, destructuring, functions, arrow, IIFE, control flow, loops, DOM, events, promises, async/await.
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
