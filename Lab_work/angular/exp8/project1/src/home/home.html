@@ -1,0 +1,38 @@
+<h2>🎓 Student Management System</h2>
+
+<!-- Form -->
+<div>
+  <input type="text" placeholder="Enter Name" [(ngModel)]="student.name">
+  <br><br>
+
+  <input type="text" placeholder="Enter Roll No" [(ngModel)]="student.roll">
+  <br><br>
+
+  <input type="text" placeholder="Enter Course" [(ngModel)]="student.course">
+  <br><br>
+
+  <button (click)="addStudent()">Add Student</button>
+</div>
+
+<hr>
+
+<!-- Display Students -->
+<h3>Student List</h3>
+
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Name</th>
+    <th>Roll</th>
+    <th>Course</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let s of studentList; let i = index">
+    <td>{{ s.name }}</td>
+    <td>{{ s.roll }}</td>
+    <td>{{ s.course }}</td>
+    <td>
+      <button (click)="deleteStudent(i)">Delete</button>
+    </td>
+  </tr>
+</table>
